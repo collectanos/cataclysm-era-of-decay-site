@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cataclysm: Era of Decay</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #222;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        header {
+            background-color: #28a745;
+            text-align: center;
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        .logo img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            animation: pulse 3s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        header .site-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            margin-top: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #28a745;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .section {
+            background-color: #333;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .section h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .section p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .action-btn {
+            display: inline-block;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-right: 10px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .action-btn.github {
+            background: linear-gradient(135deg, #000, #333);
+        }
+
+        .action-btn.itchio {
+            background: linear-gradient(135deg, #ff69b4, #ff1493);
+        }
+
+        .action-btn.googleplay {
+            background: linear-gradient(135deg, #a4c639, #387c0f);
+        }
+
+        .action-btn.discord {
+            background: linear-gradient(135deg, #7289da, #5865f2);
+        }
+
+        .action-btn.telegram {
+            background: linear-gradient(135deg, #0088cc, #00aaff);
+        }
+
+        .action-btn.fandom {
+            background: linear-gradient(135deg, #6a0dad, #9370db);
+        }
+
+        .action-btn.vk {
+            background: linear-gradient(135deg, #4a76a8, #5b89bf);
+        }
+
+        .action-btn.translation {
+            background: linear-gradient(135deg, #0074d9, #005cbf);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .language-switcher {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .language-switcher span {
+            font-size: 16px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .language-switcher span:hover {
+            color: #28a745;
+        }
+
+        .language-switcher img {
+            width: 20px;
+            height: 13px;
+            margin-left: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .language-switcher img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+            }
+
+            .logo img {
+                width: 50px;
+                height: 50px;
+            }
+
+            header .site-title {
+                font-size: 24px;
+            }
+
+            nav a {
+                font-size: 16px;
+                margin: 0 10px;
+            }
+
+            .section h2 {
+                font-size: 20px;
+            }
+
+            .section p {
+                font-size: 14px;
+            }
+
+            .action-btn {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+
+            #features-list li {
+                font-size: 14px;
+                line-height: 1.4;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="https://image.winudf.com/v2/image1/Y29tLmF0b21pY2ZveDU1Ni5jYXRhY2x5c21lb2QuZXhwZXJpbWVudGFsX2ljb25fMTcxMDM4NjQ2NV8wOTk/icon.webp?w=120&fakeurl=1&type=.webp" alt="Logo"></div>
+        <div class="site-title">Cataclysm: Era of Decay</div>
+    </header>
+    <nav>
+        <a href="#about">О игре</a>
+        <a href="#features">Особенности</a>
+        <a href="#download">Скачать</a>
+        <a href="#community">Сообщество</a>
+        <a href="#help">Помощь в разработке</a>
+    </nav>
+    <div class="container">
+        <div class="section" id="about">
+            <h2 id="about-title">О игре</h2>
+            <p id="about-text">
+                Cataclysm: Era Of Decay - пошаговая игра на выживание, действие которой разворачивается в постапокалиптическом мире.
+            </p>
+        </div>
+        <div class="section" id="features">
+            <h2 id="features-title">Особенности</h2>
+            <ul style="color: #aaa; font-size: 16px;" id="features-list">
+                <!-- Список будет заполнен по умолчанию -->
+            </ul>
+        </div>
+        <div class="section" id="download">
+            <h2 id="download-title">Скачать</h2>
+            <p id="download-subtitle">
+                Скачайте последнюю версию игры прямо сейчас:
+            </p>
+            <!-- Кнопки отсортированы в алфавитном порядке -->
+            <a href="https://github.com/AtomicFox556/Cataclysm-EOD/releases" target="_blank" class="action-btn github">GitHub</a>
+            <a href="https://russbear.itch.io/cataclysm-era-of-decay" target="_blank" class="action-btn itchio">Itch.io</a>
+            <a href="https://play.google.com/store/apps/details?id=com.atomicfox556.cataclysmeod.experimental" target="_blank" class="action-btn googleplay">Google Play</a>
+            <a href="#" onclick="showSoonMessage(this)" class="action-btn vk">VK Play</a>
+            <h3 id="platforms-title">Поддерживаемые платформы:</h3>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li>🤖 Android</li>
+                <li>🐧 Linux</li>
+                <li>🍎 OSX</li>
+                <li>🖥️ Windows</li>
+            </ul>
+        </div>
+        <div class="section" id="community">
+            <h2 id="community-title">Сообщество</h2>
+            <p id="community-subtitle">
+                Присоединяйтесь к нашему сообществу, чтобы обсудить игру, поделиться советами или предложить идеи для будущих обновлений:
+            </p>
+            <!-- Кнопки остаются без изменений -->
+            <a href="https://discord.gg/R6DPU2Abxw" target="_blank" class="action-btn discord">Discord</a>
+            <a href="https://t.me/eodshiki" target="_blank" class="action-btn telegram">Telegram</a>
+            <a href="https://cataclysm-era-of-decay.fandom.com/" target="_blank" class="action-btn fandom">Fandom</a>
+        </div>
+        <div class="section" id="help">
+            <h2 id="help-title">Помощь в разработке</h2>
+            <p>
+                <a href="https://github.com/AtomicFox556/Cataclysm-EOD" target="_blank" class="action-btn github" id="help-code">Код</a>
+                <a href="https://app.transifex.com/eod-team/cataclysm-eod" target="_blank" class="action-btn translation" id="help-translation">Перевод</a>
+            </p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Cataclysm: Era of Decay. Все права защищены.</p>
+        <div class="language-switcher">
+            <span onclick="switchLanguage('en')">EN</span>
+            <img src="https://flagcdn.com/w20/us.png" alt="English" onclick="switchLanguage('en')">
+            <span onclick="switchLanguage('ru')">RU</span>
+            <img src="https://flagcdn.com/w20/ru.png" alt="Russian" onclick="switchLanguage('ru')">
+        </div>
+    </footer>
+
+    <script>
+        // Функция для переключения языка
+        function switchLanguage(lang) {
+            if (lang === 'en') {
+                // Заголовки
+                document.getElementById('about-title').innerText = 'About the Game';
+                document.getElementById('features-title').innerText = 'Features';
+                document.getElementById('download-title').innerText = 'Download';
+                document.getElementById('community-title').innerText = 'Community';
+                document.getElementById('help-title').innerText = 'Development Assistance';
+
+                // Тексты
+                document.getElementById('about-text').innerText = 'Cataclysm: Era Of Decay is a turn-based survival game set in a post-apocalyptic world.';
+                document.getElementById('download-subtitle').innerText = 'Download the latest version of the game now:';
+                document.getElementById('platforms-title').innerText = 'Supported Platforms:';
+                document.getElementById('community-subtitle').innerText = 'Join our community to discuss the game, share tips, or suggest ideas for future updates:';
+                document.getElementById('help-code').innerText = 'Code';
+                document.getElementById('help-translation').innerText = 'Translation';
+
+                // Особенности
+                const featuresEn = [
+                    "Open world with procedurally generated locations.",
+                    "Deep character progression system.",
+                    "Varied weapons and items for crafting.",
+                    "Dynamic weather and day/night cycle.",
+                    "Many types of enemies and bosses.",
+                    "Reworked chemistry crafting system.",
+                    "Unique content (e.g., shields, mineral veins).",
+                    "More modder-friendly and player-friendly approach.",
+                    "Additional settings for customization."
+                ];
+                updateFeatures(featuresEn);
+
+                // Навигация
+                document.querySelectorAll('nav a')[0].innerText = 'About';
+                document.querySelectorAll('nav a')[1].innerText = 'Features';
+                document.querySelectorAll('nav a')[2].innerText = 'Download';
+                document.querySelectorAll('nav a')[3].innerText = 'Community';
+                document.querySelectorAll('nav a')[4].innerText = 'Development Assistance';
+            } else if (lang === 'ru') {
+                // Заголовки
+                document.getElementById('about-title').innerText = 'О игре';
+                document.getElementById('features-title').innerText = 'Особенности';
+                document.getElementById('download-title').innerText = 'Скачать';
+                document.getElementById('community-title').innerText = 'Сообщество';
+                document.getElementById('help-title').innerText = 'Помощь в разработке';
+
+                // Тексты
+                document.getElementById('about-text').innerText = 'Cataclysm: Era Of Decay - пошаговая игра на выживание, действие которой разворачивается в постапокалиптическом мире.';
+                document.getElementById('download-subtitle').innerText = 'Скачайте последнюю версию игры прямо сейчас:';
+                document.getElementById('platforms-title').innerText = 'Поддерживаемые платформы:';
+                document.getElementById('community-subtitle').innerText = 'Присоединяйтесь к нашему сообществу, чтобы обсудить игру, поделиться советами или предложить идеи для будущих обновлений:';
+                document.getElementById('help-code').innerText = 'Код';
+                document.getElementById('help-translation').innerText = 'Перевод';
+
+                // Особенности
+                const featuresRu = [
+                    "Открытый мир с процедурно генерируемыми локациями.",
+                    "Глубокая система прокачки персонажа.",
+                    "Разнообразное оружие и предметы для крафта.",
+                    "Динамическая система погоды и времени суток.",
+                    "Множество видов противников и боссов.",
+                    "Переработанный крафт химии.",
+                    "Уникальный контент (например, щиты, минеральные жилы).",
+                    "Более дружелюбное отношение к моддерам и игрокам.",
+                    "Больше настроек для настройки игры."
+                ];
+                updateFeatures(featuresRu);
+
+                // Навигация
+                document.querySelectorAll('nav a')[0].innerText = 'О игре';
+                document.querySelectorAll('nav a')[1].innerText = 'Особенности';
+                document.querySelectorAll('nav a')[2].innerText = 'Скачать';
+                document.querySelectorAll('nav a')[3].innerText = 'Сообщество';
+                document.querySelectorAll('nav a')[4].innerText = 'Помощь в разработке';
+            }
+        }
+
+        // Функция для обновления списка особенностей
+        function updateFeatures(featuresList) {
+            const featuresUl = document.getElementById('features-list');
+            featuresUl.innerHTML = ''; // Очищаем список
+            featuresList.forEach(feature => {
+                const li = document.createElement('li');
+                li.innerText = feature;
+                featuresUl.appendChild(li);
+            });
+        }
+
+        // Инициализация списка особенностей при загрузке страницы (по умолчанию русский язык)
+        document.addEventListener('DOMContentLoaded', () => {
+            const defaultLang = 'ru'; // Устанавливаем русский язык по умолчанию
+            switchLanguage(defaultLang);
+        });
+
+        // Функция для временного изменения текста кнопки VK Play
+        function showSoonMessage(button) {
+            button.textContent = 'Скоро!';
+            setTimeout(() => {
+                button.textContent = 'VK Play';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
